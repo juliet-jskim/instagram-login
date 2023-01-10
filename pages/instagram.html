@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="instagram.css">
+    <title>Instagram Log In</title>
+    
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="instagram-main">
+
+            <div class="left-column">
+
+                <div class="carousel-container">
+                        <img class="back-img" src="./photos/bg-img.png" alt="">
+
+                        <div id="slide">
+                            <img class="front-img1" src="./photos/img-1.png" />
+                            <img class="front-img2" src="./photos/img-2.png" />
+                            <img class="front-img3" src="./photos/img-3.png" />
+                        </div>
+                        
+                </div>
+
+            </div>
+            <div class="right-column">
+                <div class="login-container">
+                       
+                    
+                        <div class="forms">
+                            <img class="ig-logo" src="./photos/instagram-text-logo.png" alt="">
+
+                            <div class="login-form">
+                                    <div class="input-user">
+                                        <input class="userid" type="text" id="username" placeholder="Phone number, username, or email">
+                                    </div>
+                                    <div class="input-pw">
+                                        <input class="pw" type="password" id="password" placeholder="Password">
+                                    </div>    
+                                        
+                                    <button class="login-btn">Log in</button>
+
+                                <div class="divider">
+                                    <div class="line"></div>
+                                    <p>OR</p> 
+                                    <div class="line"></div> 
+                                </div>
+
+                                <div class="facebook-container">
+                                    <div class="fb-login">
+                                        <img class="fb-logo"src="./photos/fb.png" alt="">
+                                        <h4>Log in with Facebook</h4>
+                                    </div>
+                                        
+                                    <a class="forgotten-pw">Forgot password?</a>
+                                </div> 
+                            </div>
+                        </div>
+
+                        <div class="sign-up">
+                            <p class="no-account">Don't have an account?</p> 
+                            <a href="#" class="sign-up-link"><span>Sign Up</span></a>
+
+                        </div>
+                    
+                        <div class="app-download">
+                            <p>Get the app.</p>
+                            <div class="app-store">
+                                <img class="apple-store"src="./photos/apple-store.png" alt="">
+                                <img class="play-store"src="./photos/google-play.png" alt="">
+                            </div>
+                        </div>
+
+                   
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="footer">
+            <div class="footer-container">
+        
+                <div class="links">
+                    <a class="a-link" href="Meta">Meta</a>
+                    <a class="b-link" href="About">About</a>
+                    <a class="c-link" href="Blog">Blog</a>
+                    <a class="d-link" href="Jobs">Jobs</a>
+                    <a class="e-link" href="Help">Help</a>
+                    <a class="f-link" href="API">API</a>
+                    <a class="g-link" href="Privacy">Privacy</a>
+                    <a class="h-link" href="Terms">Terms</a>
+                    <a class="i-link" href="Top Account">Top Account</a>
+                    <a class="j-link" href="Locations">Locations</a>
+                    <a class="k-link" href="instagram-lite">Instagram Lite</a>
+                    <a class="l-link" href="contact-uploading">Contact Uploading & Non-Users</a>
+                </div>
+
+                <div class="bottom-text">
+                    <select class="switch-lang" id="">
+                        <option value="English">English</option>
+                        <option value="EnglishUK">English (UK)</option>
+                        <option value="Spanish">Español</option>
+                        <option value="French">Français</option>
+                        <option value="Korean">한국어</option>
+                        <option value="Japanese">日本語</option>
+                    </select>
+                    <p>© 2023 Instagram from Meta</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script>
+
+    var slide = document.getElementById("slide");
+    var arr = Array.prototype.slice.call(slide.children);
+
+
+    arr.map(function(imgObj) {
+    imgObj.classList.add("slide-img");
+    });
+
+  
+    arr[0].classList.add("show");
+
+    var currentSlide = 1;
+    var slideLength = slide.children.length;
+    var prevSlide = 0;
+
+    setInterval(function() {
+    if (currentSlide >= slideLength)
+        currentSlide = 0;
+
+    arr[prevSlide].classList.remove("show");
+    arr[currentSlide].classList.add("show");
+
+    prevSlide = currentSlide;
+    currentSlide++;
+
+    }, 5000)
+    </script>
+
+</body>
+</html>
